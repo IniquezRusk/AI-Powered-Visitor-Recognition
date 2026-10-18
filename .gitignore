@@ -1,11 +1,19 @@
-@'
+
+# Python cache
 __pycache__/
 *.py[cod]
+
+# Virtual environments
 .venv/
 venv/
+
+# InsightFace models
 Backend/models/
+
+# Visitor biometric data
 Backend/data/visitors/
+
+# Secrets
 .env
 .env.*
 !.env.example
-'@ | Set-Content .gitignore
