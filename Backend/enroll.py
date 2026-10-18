@@ -1,4 +1,3 @@
-
 import cv2
 from pathlib import Path
 
@@ -111,7 +110,16 @@ def enroll_visitor(visitor_id: str, samples_required: int = 10):
             if key == ord(" ") and len(faces) == 1:
                 x, y, w, h = faces[0]
 
-                # Crop the face from the original frame.
+                # Save the full webcam frame for detector testing
+                frame_filename = visitor_dir / (
+                    f"frame_{samples_saved + 1:03d}.jpg"
+                )
+
+                if not cv2.imwrite(str(frame_filename), frame):
+                    print("Failed to save frame.")
+                    continue
+
+                # Keep saving the existing cropped face samples
                 face_image = frame[y:y + h, x:x + w]
 
                 filename = visitor_dir / (

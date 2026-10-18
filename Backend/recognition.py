@@ -141,4 +141,3 @@ if __name__ == "__main__":
     result = engine.recognize_face(test_image)
     print("\nRecognition result:")
     print(result)
-
