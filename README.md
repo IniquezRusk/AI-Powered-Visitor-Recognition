@@ -11,74 +11,54 @@ The project combines modern technologies in computer vision, artificial intellig
 Project Objectives
 
 The system will be capable of:
-
 1. Recognizing Registered Users
-
-o Capture images using a camera.
-
-o Detect and identify authorized users through facial recognition technology.
-
-o Verify user identity against a secure database.
+  o Capture images using a camera.
+  o Detect and identify authorized users through facial recognition technology.
+  o Verify user identity against a secure database.
 
 2. Providing Intelligent Greetings
-
-o Automatically greet recognized users.
-
-o Generate personalized welcome messages.
-
-o Support text and voice-based interactions.
+  o Automatically greet recognized users.
+  o Generate personalized welcome messages.
+  o Support text and voice-based interactions.
 
 3. Retrieving and Presenting Useful Information
 
-o Retrieve user-specific information from a database.
-
-o Display relevant information such as:
-
-§ Upcoming meetings
-
-§ Course schedules
-
-§ Department announcements
-
-§ Academic reminders
-
-§ Event notifications
-
-o Present information through an interactive user interface.
+  o Retrieve user-specific information from a database.
+  o Display relevant information such as:
+  
+    § Upcoming meetings
+    § Course schedules
+    § Department announcements
+    § Academic reminders
+    § Event notifications
+    
+  o Present information through an interactive user interface.
 
 4. Maintaining Activity Records
-
-o Record visitor interactions.
-
-o Log date and time of each visit.
-
-o Generate usage statistics and reports.
-
-o Provide an administrative dashboard for authorized users.
+  o Record visitor interactions.
+  o Log date and time of each visit.
+  o Generate usage statistics and reports.
+  o Provide an administrative dashboard for authorized users.
 
 Example Scenario
 
-A faculty member enters the department office area.
+  A faculty member enters the department office area.
 
-The system:
+  The system:
 
-· Detects the person's face.
+    · Detects the person's face.
+    · Identifies the authorized user.
+    · Displays a greeting such as:
 
-· Identifies the authorized user.
+  Welcome back, Dr. Smith.
 
-· Displays a greeting such as:
+    · Retrieves useful information from the database:
 
-Welcome back, Dr. Smith.
+  You have a faculty meeting at 2:00 PM today.
+  Three new student applications require review.
+  The department seminar begins at 4:00 PM.
 
-· Retrieves useful information from the database:
-
-You have a faculty meeting at 2:00 PM today.
-
-Three new student applications require review.
-
-The department seminar begins at 4:00 PM.
-
-· Records the visit in the system log.
+  · Records the visit in the system log.
 
 Technical Components
 
