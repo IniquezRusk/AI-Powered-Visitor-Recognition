@@ -1,6 +1,8 @@
+from onnxruntime import get_available_providers
 from insightface.app import FaceAnalysis
 
 def main():
+    available = get_available_providers()
     print("Initializing InsightFace...")
 
     app = FaceAnalysis(name="buffalo_l", 

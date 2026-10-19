@@ -1,3 +1,7 @@
+// AI Models are large, GPU will be a concern.
+// Learn how big the model is, parameter size, and how to make it function on mutliple devices.
+// Should be more of an app, simple to use
+
 import cv2
 from pathlib import Path
 
