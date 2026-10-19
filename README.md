@@ -57,40 +57,31 @@ Example Scenario
   You have a faculty meeting at 2:00 PM today.
   Three new student applications require review.
   The department seminar begins at 4:00 PM.
-
-  · Records the visit in the system log.
+  
+    · Records the visit in the system log.
 
 Technical Components
 
-Students will gain hands-on experience with:
+  Students will gain hands-on experience with:
 
-Artificial Intelligence & Computer Vision
-
-· Face detection
-
-· Face recognition
-
-· Image processing
-
-· Deep learning models
+    Artificial Intelligence & Computer Vision
+    · Face detection
+    · Face recognition
+    · Image processing
+    · Deep learning models
 
 Software Engineering
 
-· Requirements analysis
-
-· System design
-
-· Testing and validation
-
-· Deployment
+  · Requirements analysis
+  · System design
+  · Testing and validation
+  · Deployment
 
 Database Systems
 
-· User profiles
-
-· Activity logs
-
-· Information management
+  · User profiles
+  · Activity logs
+  · Information management
 
 Web and Mobile Technologies
 
