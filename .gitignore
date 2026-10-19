@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# InsightFace models
+Backend/models/
+Backend/buffalo_l/
+Backend/buffalo_l.zip
+
+# Visitor biometric data
+Backend/data/visitors/
+
+# Secrets
+.env
+.env.*
+!.env.example
