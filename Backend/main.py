@@ -1,5 +1,8 @@
 from contextlib import asynccontextmanager
 from pathlib import Path
+from fastapi import Query
+from activity import record_event, get_events, get_summary
+
 import tempfile
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
@@ -45,7 +48,13 @@ async def recognize_face(file: UploadFile = File(...)):
             temp.write(image_data)
             temp_path = Path(temp.name)
 
-        return app.state.recognition_engine.recognize_face(str(temp_path))
+        result = app.state.recognition_engine.recognize_face(
+            str(temp_path)
+        )
+
+        record_event(result)
+
+        return result
 
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
@@ -53,3 +62,15 @@ async def recognize_face(file: UploadFile = File(...)):
     finally:
         if temp_path is not None:
             temp_path.unlink(missing_ok=True)
+
+@app.get("/activity")
+def recognition_activity(
+    limit: int = Query(default=50, ge=1, le=500)
+):
+    return {
+        "events": get_events(limit)
+    }
+
+@app.get("/analytics/summary")
+def analytics_summary():
+    return get_summary()
