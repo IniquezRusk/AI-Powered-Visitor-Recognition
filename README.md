@@ -1,177 +1,147 @@
-AI-Powered Smart Visitor Recognition and Information Assistant
+# AI-Powered Smart Visitor Recognition and Information Assistant
 
-Faculty mentors: Dr. Shuvo and Dr. Yang
+An AI-powered visitor recognition system developed as a Computer Science capstone project at Prairie View A&M University.
 
-Project Overview
+The system uses facial recognition to identify registered visitors, maintain recognition activity records, and provide a foundation for personalized information and intelligent interactions.
 
-The Computer Science Department is seeking a team of motivated students to develop an AI-Powered Smart Visitor Recognition and Information Assistant. The goal of this project is to create an intelligent system that can recognize authorized users, interact with them in a natural and friendly manner, provide personalized information, and maintain visitor activity records.
+**Faculty Mentors:** Dr. Shuvo and Dr. Yang
 
-The project combines modern technologies in computer vision, artificial intelligence, databases, web services, and human-computer interaction to create an innovative smart assistant platform.
+## Project Documentation
 
-Project Objectives
+For the complete project overview, objectives, technical scope, and expected deliverables, see [Project Description](project_desc.md).
 
-The system will be capable of:
-1. Recognizing Registered Users
-  o Capture images using a camera.
-  o Detect and identify authorized users through facial recognition technology.
-  o Verify user identity against a secure database.
+## Technology Stack
 
-2. Providing Intelligent Greetings
-  o Automatically greet recognized users.
-  o Generate personalized welcome messages.
-  o Support text and voice-based interactions.
+- **Python** – Core programming language
+- **FastAPI** – Backend REST API
+- **InsightFace** – Facial detection and recognition
+- **Buffalo_L** – Pretrained facial recognition model
+- **OpenCV** – Image processing and camera access
+- **ONNX Runtime** – Neural network inference
+- **Uvicorn** – ASGI server
 
-3. Retrieving and Presenting Useful Information
+## Current Features
 
-  o Retrieve user-specific information from a database.
-  o Display relevant information such as:
-  
-    § Upcoming meetings
-    § Course schedules
-    § Department announcements
-    § Academic reminders
-    § Event notifications
-    
-  o Present information through an interactive user interface.
+- Webcam-based visitor enrollment.
+- Facial detection and recognition.
+- Facial embedding generation and comparison.
+- Image-based recognition through REST API.
+- Recognition activity logging.
+- Visitor recognition analytics.
+- Interactive API documentation.
 
-4. Maintaining Activity Records
-  o Record visitor interactions.
-  o Log date and time of each visit.
-  o Generate usage statistics and reports.
-  o Provide an administrative dashboard for authorized users.
+## Repository Structure
 
-Example Scenario
+```text
+AI-Powered-Visitor-Recognition/
+│
+├── Backend/
+│   ├── data/
+│   │   ├── visitors/
+│   │   └── recognition_events.jsonl
+│   │
+│   ├── models/
+│   ├── activity.py
+│   ├── camera.py
+│   ├── enroll.py
+│   ├── main.py
+│   ├── recognition.py
+│   ├── requirements.txt
+│   └── setup.ps1
+│
+├── README.md
+└── project_desc.md
+```
 
-  A faculty member enters the department office area.
+## Installation
 
-  The system:
+### Prerequisites
 
-    · Detects the person's face.
-    · Identifies the authorized user.
-    · Displays a greeting such as:
+- Python 3.11 or 3.12 recommended.
+- Git.
+- A webcam for visitor enrollment.
 
-  Welcome back, Dr. Smith.
+### 1. Clone the Repository
 
-    · Retrieves useful information from the database:
+```bash
+git clone https://github.com/IniquezRusk/AI-Powered-Visitor-Recognition.git
+```
 
-  You have a faculty meeting at 2:00 PM today.
-  Three new student applications require review.
-  The department seminar begins at 4:00 PM.
+### 2. Navigate to the Backend
 
-  · Records the visit in the system log.
+```bash
+cd AI-Powered-Visitor-Recognition/Backend
+```
 
-Technical Components
+### 3. Run the Setup Script
 
-Students will gain hands-on experience with:
+On Windows PowerShell:
 
-Artificial Intelligence & Computer Vision
+```powershell
+.\setup.ps1
+```
 
-· Face detection
+The setup script creates a virtual environment, installs the required Python dependencies, and initializes the InsightFace `buffalo_l` model.
 
-· Face recognition
+### 4. Start the Backend
 
-· Image processing
+```powershell
+.\.venv\Scripts\Activate.ps1
+python -m uvicorn main:app --reload
+```
 
-· Deep learning models
+The backend will run at:
 
-Software Engineering
+`http://127.0.0.1:8000`
 
-· Requirements analysis
+## API Documentation
 
-· System design
+Interactive API documentation is available through FastAPI's Swagger UI:
 
-· Testing and validation
+`http://127.0.0.1:8000/docs`
 
-· Deployment
+### Available Endpoints
 
-Database Systems
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/health` | Check backend status |
+| POST | `/recognize` | Recognize a visitor from an uploaded image |
+| GET | `/activity` | Retrieve recognition activity |
+| GET | `/analytics/summary` | Retrieve recognition statistics |
 
-· User profiles
+## Visitor Enrollment
 
-· Activity logs
+To enroll a visitor using a connected webcam:
 
-· Information management
+```powershell
+python enroll.py
+```
 
-Web and Mobile Technologies
+Enrolled visitor information and facial embeddings are stored in the backend's visitor data directory.
 
-· Administrative dashboard
+## Recognition Workflow
 
-· User interface design
+1. Capture and enroll a visitor's face.
+2. Generate facial embeddings using InsightFace.
+3. Submit an image to the recognition API.
+4. Generate an embedding from the submitted image.
+5. Compare the embedding against enrolled visitor records.
+6. Return the recognition result.
+7. Record the recognition event for activity tracking and analytics.
 
-· REST APIs
+## Project Status
 
-Cloud and Security
+**Currently in development.**
 
-· Authentication
+The backend supports visitor enrollment, facial recognition, activity logging, and analytics. Additional features and frontend integration are being developed.
 
-· Data protection
+## Privacy and Security
 
-· Secure storage practices
+Facial embeddings and visitor records are sensitive biometric information. Do not commit private visitor data, credentials, or other sensitive information to the repository.
 
-Possible Technologies
+## Contributors
 
-· Python
+Computer Science Capstone Project  
+Prairie View A&M University
 
-· OpenCV
-
-· DeepFace / FaceNet / InsightFace
-
-· TensorFlow or PyTorch
-
-· MySQL or PostgreSQL
-
-· Flask, FastAPI, or Django
-
-· React or Angular
-
-· Azure, AWS, or Google Cloud
-
-Expected Deliverables
-
-The team will develop:
-
-· Working facial recognition system
-
-· Information retrieval module
-
-· Interactive user interface
-
-· Activity logging system
-
-· Database backend
-
-· Administrative dashboard
-
-· Technical documentation
-
-· Final demonstration and presentation
-
-Skills Students Will Develop
-
-This project provides practical experience in:
-
-· Artificial Intelligence
-
-· Machine Learning
-
-· Computer Vision
-
-· Software Engineering
-
-· Database Design
-
-· Web Development
-
-· Cloud Technologies
-
-· Human-Computer Interaction
-
-Note on Responsible AI
-
-The project will incorporate responsible AI principles, including user consent, privacy protection, secure handling of personal information, and transparency regarding facial recognition usage.
-
-Ideal Team Size
-
-3-5 students
-
-Students interested in Artificial Intelligence, Computer Vision, Software Engineering, Databases, Web Development, or Machine Learning are particularly encouraged to consider this project.
+**Faculty Mentors:** Dr. Shuvo and Dr. Yang
